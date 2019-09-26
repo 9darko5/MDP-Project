@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.controller.StatisticsController">
+   <children>
+      <TableView fx:id="statisticsTV" layoutX="14.0" layoutY="85.0" prefHeight="244.0" prefWidth="569.0">
+        <columns>
+          <TableColumn fx:id="loginDateColumn" prefWidth="197.0" text="Datum prijave" />
+          <TableColumn fx:id="logoutDateColumn" minWidth="0.0" prefWidth="200.0" text="Datum odjave" />
+            <TableColumn fx:id="sessionTimeColumn" prefWidth="171.0" text="Ukupno vrijeme na mreži" />
+        </columns>
+      </TableView>
+      <Label fx:id="statisticsLabel" layoutX="17.0" layoutY="38.0" prefHeight="35.0" prefWidth="569.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

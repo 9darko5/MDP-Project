@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.etfbl.controller.AdminOptionsController">
+   <children>
+      <MenuBar layoutX="14.0" layoutY="14.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Opcije">
+            <items>
+                  <MenuItem fx:id="addUserMenuItem" mnemonicParsing="false" onAction="#addUserAction" text="Dodaj korisnički nalog" />
+                  <MenuItem fx:id="changePasswordMeniItem" mnemonicParsing="false" onAction="#changePasswordAction" text="Izmijeni lozinku" />
+              <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" onAction="#logoutAction" text="Odjava" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <ComboBox fx:id="chooseUserToUpdateCMB" layoutX="86.0" layoutY="39.0" prefWidth="150.0" promptText="Aktivni korisnici" />
+      <TextArea fx:id="adminMessageTA" layoutX="288.0" layoutY="40.0" onDragEntered="#sendAdminMessageAction" prefHeight="69.0" prefWidth="329.0" />
+      <Button fx:id="sendAdminMessageBTN" layoutX="567.0" layoutY="121.0" mnemonicParsing="false" onAction="#sendAdminMessageAction" text="Pošalji" />
+      <Button fx:id="monitorBTN" layoutX="177.0" layoutY="74.0" mnemonicParsing="false" onAction="#monitorAction" text="Monitor" />
+      <Button fx:id="statisticsBTN" layoutX="86.0" layoutY="74.0" mnemonicParsing="false" onAction="#statisticsAction" text="Statistika" />
+      <Button fx:id="refreshBTN" layoutX="150.0" layoutY="8.0" mnemonicParsing="false" onAction="#refreshAction" text="Osvježi li listu" />
+   </children>
+</AnchorPane>
