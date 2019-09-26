@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soapServer.etfbl.net" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soapServer.etfbl.net" xmlns:intf="http://soapServer.etfbl.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soapServer.etfbl.net" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="jedisMain">
+    <complexType/>
+   </element>
+   <element name="jedisMainResponse">
+    <complexType/>
+   </element>
+   <element name="addAccount">
+    <complexType>
+     <sequence>
+      <element name="ime" type="xsd:string"/>
+      <element name="prezime" type="xsd:string"/>
+      <element name="username" type="xsd:string"/>
+      <element name="lozinka" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addAccountResponse">
+    <complexType>
+     <sequence>
+      <element name="addAccountReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeAccount">
+    <complexType>
+     <sequence>
+      <element name="username" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="removeAccountResponse">
+    <complexType/>
+   </element>
+   <element name="updateAccount">
+    <complexType>
+     <sequence>
+      <element name="ime" type="xsd:string"/>
+      <element name="prezime" type="xsd:string"/>
+      <element name="username" type="xsd:string"/>
+      <element name="lozinka" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="updateAccountResponse">
+    <complexType>
+     <sequence>
+      <element name="updateAccountReturn" type="xsd:boolean"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="updateAccountResponse">
+
+      <wsdl:part element="impl:updateAccountResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="jedisMainResponse">
+
+      <wsdl:part element="impl:jedisMainResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeAccountRequest">
+
+      <wsdl:part element="impl:removeAccount" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="removeAccountResponse">
+
+      <wsdl:part element="impl:removeAccountResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addAccountRequest">
+
+      <wsdl:part element="impl:addAccount" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="updateAccountRequest">
+
+      <wsdl:part element="impl:updateAccount" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="jedisMainRequest">
+
+      <wsdl:part element="impl:jedisMain" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addAccountResponse">
+
+      <wsdl:part element="impl:addAccountResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="AccountSettings">
+
+      <wsdl:operation name="jedisMain">
+
+         <wsdl:input message="impl:jedisMainRequest" name="jedisMainRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:jedisMainResponse" name="jedisMainResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addAccount">
+
+         <wsdl:input message="impl:addAccountRequest" name="addAccountRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addAccountResponse" name="addAccountResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeAccount">
+
+         <wsdl:input message="impl:removeAccountRequest" name="removeAccountRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:removeAccountResponse" name="removeAccountResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateAccount">
+
+         <wsdl:input message="impl:updateAccountRequest" name="updateAccountRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:updateAccountResponse" name="updateAccountResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="AccountSettingsSoapBinding" type="impl:AccountSettings">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="jedisMain">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="jedisMainRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="jedisMainResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addAccount">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addAccountRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addAccountResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="removeAccount">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="removeAccountRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="removeAccountResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="updateAccount">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="updateAccountRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="updateAccountResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="AccountSettingsService">
+
+      <wsdl:port binding="impl:AccountSettingsSoapBinding" name="AccountSettings">
+
+         <wsdlsoap:address location="http://localhost:8080/AccountSettings/services/AccountSettings"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

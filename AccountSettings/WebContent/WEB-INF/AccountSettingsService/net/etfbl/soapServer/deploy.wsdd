@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AccountSettingsService WSDL service -->
+
+  <service name="AccountSettings" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soapServer.etfbl.net"/>
+      <parameter name="wsdlServiceElement" value="AccountSettingsService"/>
+      <parameter name="schemaQualified" value="http://soapServer.etfbl.net"/>
+      <parameter name="wsdlServicePort" value="AccountSettings"/>
+      <parameter name="className" value="net.etfbl.soapServer.AccountSettings"/>
+      <parameter name="wsdlPortType" value="AccountSettings"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://soapServer.etfbl.net" name="jedisMain" qname="operNS:jedisMain" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://soapServer.etfbl.net" xmlns:retNS="http://soapServer.etfbl.net" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="addAccount" qname="operNS:addAccount" returnQName="retNS:addAccountReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ime" type="tns:string"/>
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:prezime" type="tns:string"/>
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lozinka" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://soapServer.etfbl.net" name="removeAccount" qname="operNS:removeAccount" soapAction="">
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://soapServer.etfbl.net" xmlns:retNS="http://soapServer.etfbl.net" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="updateAccount" qname="operNS:updateAccount" returnQName="retNS:updateAccountReturn" returnType="rtns:boolean" soapAction="">
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:ime" type="tns:string"/>
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:prezime" type="tns:string"/>
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:username" type="tns:string"/>
+        <parameter xmlns:pns="http://soapServer.etfbl.net" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lozinka" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="addAccount removeAccount jedisMain updateAccount"/>
+
+  </service>
+</deployment>
